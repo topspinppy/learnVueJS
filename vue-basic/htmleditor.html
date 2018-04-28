@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app-2">
+    <!-- เอาเมาส์ไปวางบนข้อความ เป็น Hover แสดง-->
+    <!-- v-bind เป็นการผูกค่าจาก message เข้าไปที่ Attribute ของ Html ถ้าไม่มี v-bind มันจะ Show คำว่า Message -->
+    <!-- มันจะมองเป็นข้อมูลที่อยุ่ใน Data -->
+      <span v-html="message"></span>
+
+      <textarea v-model="message"></textarea>
+    </div>
+  <script>
+    // object นี้มันมาตอนเพจโหลด ถูกเรียกมาแค่ครั้งเดียว
+    // เพราะฉะนั้นเวลามันจะไม่อัพเดท (not Re-active)
+    var app2 = new Vue({
+      el: '#app-2',
+      data: {
+        message: 'hello <h5>html</h5>',
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+  <style>
+    .active {
+      color: blue;
+    }
+    .text-danger {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div v-bind:class="classObject">
+      <h1>Hello</h1>
+    </div>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        isActive: true,
+        error: null
+      },
+      computed: {
+        classObject: function () {
+          return {
+            active: this.isActive && !this.error,
+            'text-danger': this.error && this.error.type === 'fatal'
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>

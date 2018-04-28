@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <!-- เอา Script วางไว้ข้างท้าย เพื่อให้มันโหลด dom ให้เสร็จก่อนแล้ว Script จึงจะทำงาน -->
+  <div id="app">
+    {{ message }}
+  </div>
+
+  <script>
+    // Declarative Rendering ส่ง object json เข้าไป
+    var app = new Vue({
+      //element กำหนด ให้มัน Ref ไปที่ #app
+      el: '#app',
+      //เรียกใช้ตัวแปรให้มันแสดงผลได้ มันจะ Render ไปที่ฝั่ง user
+      data: {
+        message: 'Hello Sellsuki!'
+      }
+    })
+  </script>
+</body>
+</html>

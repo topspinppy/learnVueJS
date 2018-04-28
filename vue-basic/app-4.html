@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app-4">
+        <ol>
+          <!-- todo เป็นชื่อเล่นของ todos ถึงเวลาก็เรียกใช้ todo เอา -->
+          <li v-for="todo in todos">
+            {{ todo.text }} : {{ todo.duration }}
+          </li>
+        </ol>
+        <ol>
+            <!-- todo เป็นชื่อเล่นของ todos ถึงเวลาก็เรียกใช้ todo เอา -->
+            <li v-for="todo in todos">
+              {{ todo.text +  ' : ' + todo.duration }}
+            </li>
+          </ol>
+      </div>
+      
+  <script>
+    var app4 = new Vue({
+      el: '#app-4',
+      data: {
+        // มี array เป็น json object 
+        // ถ้าอยากเรียงลำดับ Sort ก่อนค่อยส่งไป
+        todos: [
+          { text: 'Learn JavaScript', duration: 100 },
+          { text: 'Learn Vue', duration: 12  },
+          { text: 'Build something awesome', duration: 3  }
+        ]
+      }
+    })
+
+
+  </script>
+  <!-- เอาค่าออกมาดู -->
+  <!-- app4.todos -->
+  <!-- เพิ่มค่าลงไป -->
+  <!-- app4.todos.push({ text: 'New item' }) -->
+  <!-- ลบค่าลงไป -->
+  <!-- app4.todos.pop() -->
+  <!-- เก็บใน ฟ้อนเอนต์ มันจะหาย -->
+</body>
+</html>

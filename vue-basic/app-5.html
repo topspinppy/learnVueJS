@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app-5">
+      <p>{{ message }}</p>
+      <!-- เอาไว้จับ event ถ้ามันมี event เกิดขึ้นมันจะไปทำที่ฟังก์ชั่นไหน -->
+      <button v-on:click="reverseMessage">Reverse Message</button>
+      <!-- v-on:[event JS อะไรก็ได้] -->
+      <!-- เขียน function แบบไม่ต้องใช้ () ShortHand Function  -->
+  </div>
+
+  <script>
+    var app5 = new Vue({
+      // ผูกกับ el
+      el: '#app-5',
+      // message
+      data: {
+        message: 'Hello Vue.js!'
+      },
+      // มีฟังก์ชั่น ชื่อ Reverse Message 
+      // Json object ข้างใน object เป็น Function ได้
+      methods: {
+        reverseMessage: function () {
+          //ได้ผลลัพธ์เอาไปใส่ใน This.message 
+          this.message = this.message.split('').reverse().join('')
+        }
+      }
+    })
+  </script>
+</body>
+</html>

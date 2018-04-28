@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="example-1">
+        {{ complete }}
+
+        {{ add }}
+        <input type="text" v-model="before">
+        <button type="button"> 5% </button>
+        <button type="button"> 10% </button>
+        <button type="button"> 15% </button>
+        <button type="button"> 20% </button>
+        <button type="button"> 30% </button>
+        <button type="button"> 40% </button>
+    </div>
+    <script>
+        var example1 = new Vue({
+            el: '#example-1',
+            data: {
+                before: 1,
+                complete: 0,
+            },
+            computed:{
+                add: function () {
+                    return this.before
+                }
+            }
+        })
+    </script> 
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+    
+    <div :style="color"></div>
+    <br>
+    R : <input type="text" v-model="R"><br>
+    G : <input type="text" v-model="G"><br>
+    B : <input type="text" v-model="B"><br>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                R:'',
+                G:'',
+                B:''
+            },
+            computed:{
+                color: function () {
+                    return 'background-color: rgb('+this.R+','+this.G+','+this.B+');width:40px; height:50px;'
+                    //return this.name+this.sname
+                }
+            }
+        })
+    </script>
+</body>
+</html>
